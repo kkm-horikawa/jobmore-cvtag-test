@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>テスト求人ページ（JobMore CVタグ動作確認）</title>
+  <!-- JobMore ランディングコード -->
+  <script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var cid = params.get('jm_click_id');
+    if (cid) {
+      var d = new Date();
+      d.setDate(d.getDate() + 30);
+      document.cookie = '_jm_cid=' + cid + '; expires=' + d.toUTCString() + '; path=/; SameSite=None; Secure';
+    }
+  })();
+  </script>
+</head>
+<body>
+  <h1>テスト求人ページ</h1>
+  <p>JobMore コンバージョン計測タグの動作確認用ページです。ジョブモアからの遷移を想定し、URLの jm_click_id をCookieに保存します。</p>
+  <p><a href="thanks.html" id="apply">応募する（完了ページへ）</a></p>
+</body>
+</html>

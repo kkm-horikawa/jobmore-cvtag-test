@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>応募完了（JobMore CVタグ動作確認）</title>
+</head>
+<body>
+  <h1>応募が完了しました</h1>
+  <p>JobMore コンバージョン計測タグの動作確認用ページです。コンバージョンコードがピクセルを送信します。</p>
+  <!-- JobMore コンバージョンコード -->
+  <script>
+  (function() {
+    var cid = (document.cookie.match(/_jm_cid=([^;]+)/) || [])[1];
+    var img = new Image();
+    img.src = 'https://jobmore.co.jp/api/v1/conversion/pixel.gif'
+      + '?token=79c9c572-f791-40af-bc8f-0caaf1ad78be'
+      + (cid ? '&cid=' + encodeURIComponent(cid) : '')
+      + '&t=' + Date.now();
+  })();
+  </script>
+  <noscript>
+    <img src="https://jobmore.co.jp/api/v1/conversion/pixel.gif?token=79c9c572-f791-40af-bc8f-0caaf1ad78be" width="1" height="1" style="display:none">
+  </noscript>
+</body>
+</html>
